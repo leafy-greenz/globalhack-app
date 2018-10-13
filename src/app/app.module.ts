@@ -11,7 +11,16 @@ import {AppRoutingModule} from './app-routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CreateCommunityComponent } from './create-community/create-community.component';
 import { CreateEventComponent } from './create-event/create-event.component';
-import {MatCardModule, MatDividerModule, MatFormFieldModule, MatInputModule, MatSidenavModule, MatTabsModule} from '@angular/material';
+import {
+  MatCardModule,
+  MatDividerModule,
+  MatSidenavModule,
+  MatTabsModule,
+  MatButtonModule,
+  MatStepperModule,
+  MatFormFieldModule,
+  MatInputModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -32,7 +41,9 @@ import {MatCardModule, MatDividerModule, MatFormFieldModule, MatInputModule, Mat
     MatDividerModule,
     MatTabsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
