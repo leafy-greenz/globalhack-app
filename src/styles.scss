@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./theme";
+
+@mixin non-selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin button-style($font-size: 16px, $background-color: $app-accent, $hover-background-color: $app-accent-light) {
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: $font-size;
+  background-color: $background-color;
+  color: white;
+
+  &:hover {
+    background-color: $hover-background-color;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: $disabled-gray !important;
+
+    &:hover {
+      background-color: $disabled-gray !important;
+      cursor: not-allowed;
+    }
+  }
+
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  text-align: center;
+  font-family: "Roboto", Avenir, sans-serif;
+  font-size: 12px;
+  height: 100%;
+  margin: 0;
+}
