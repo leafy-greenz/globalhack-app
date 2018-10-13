@@ -19,8 +19,7 @@ import {
   MatInputModule,
   MatSidenavModule,
   MatStepperModule,
-  MatTabsModule,
-  MatFormFieldModule
+  MatTabsModule
 } from '@angular/material';
 import {CommunityAPIService} from './community-api.service';
 import {HttpClientModule} from '@angular/common/http';

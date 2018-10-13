@@ -1,3 +1,23 @@
-<p>
-  community-hub works!
-</p>
+<mat-drawer-container>
+  <mat-drawer mode="side" position="end" [opened]="true">
+    <h3>Mentors</h3>
+    <mat-divider></mat-divider>
+    <h3>Members</h3>
+    <mat-divider></mat-divider>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="header-container">
+      <h1>Community Title</h1>
+      <p>Community description</p>
+      <p>City: St. Louis, MO</p>
+    </div>
+    <div class="list-container">
+      <mat-card>
+        <h2>Event Title</h2>
+        <p>event description...</p>
+        <p>Date:</p>
+        <p>Location:</p>
+      </mat-card>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
