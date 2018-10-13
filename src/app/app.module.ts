@@ -28,6 +28,13 @@ import {MatButtonModule, MatStepperModule} from '@angular/material';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+<<<<<<< HEAD
+=======
+    MatCardModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatTabsModule,
+>>>>>>> 15d0d90445cf6bf620d846349e4c1e2cb3fa65a0
     MatButtonModule,
     MatStepperModule
   ],
