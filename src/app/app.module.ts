@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CreateCommunityComponent } from './create-community/create-community.component';
 import { CreateEventComponent } from './create-event/create-event.component';
+import {MatCardModule, MatDividerModule, MatSidenavModule, MatTabsModule} from '@angular/material';
 
 import {MatButtonModule, MatStepperModule} from '@angular/material';
 
@@ -28,6 +29,10 @@ import {MatButtonModule, MatStepperModule} from '@angular/material';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatTabsModule,
     MatButtonModule,
     MatStepperModule
   ],
