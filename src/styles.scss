@@ -1,6 +1,8 @@
 $app-primary: #689f38;
 $app-accent: #ffc107;
 $app-warn: #ef5350;
+$app-primary-light: #8bc34a;
+$app-accent-light: #ffbd45;
 
 @mixin non-selectable {
   -webkit-touch-callout: none;

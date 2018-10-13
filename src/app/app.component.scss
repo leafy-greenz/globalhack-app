@@ -13,6 +13,38 @@ nav {
   top: 0;
   z-index: 5;
   text-align: center;
+  background-color: $app-primary;
   font-size: 15px;
   height: 55px;
+
+  a {
+    @include non-selectable;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    &:hover {
+      background-color: $app-primary-light;
+    }
+  }
+
+  .left-align {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .right-align {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
 }
