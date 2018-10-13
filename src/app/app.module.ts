@@ -21,7 +21,7 @@ import {MatCardModule, MatDividerModule, MatSidenavModule} from '@angular/materi
     CommunityHubComponent,
     EventDetailsComponent,
     CreateCommunityComponent,
-    CreateEventComponent
+    CreateEventComponent,
     StepperComponent
   ],
   imports: [
