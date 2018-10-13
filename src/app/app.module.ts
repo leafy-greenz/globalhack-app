@@ -11,7 +11,7 @@ import {AppRoutingModule} from './app-routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CreateCommunityComponent } from './create-community/create-community.component';
 import { CreateEventComponent } from './create-event/create-event.component';
-import {MatCardModule, MatDividerModule, MatSidenavModule, MatTabsModule} from '@angular/material';
+import {MatCardModule, MatDividerModule, MatFormFieldModule, MatInputModule, MatSidenavModule, MatTabsModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,9 @@ import {MatCardModule, MatDividerModule, MatSidenavModule, MatTabsModule} from '
     MatCardModule,
     MatSidenavModule,
     MatDividerModule,
-    MatTabsModule
+    MatTabsModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
