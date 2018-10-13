@@ -12,6 +12,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CreateCommunityComponent } from './create-community/create-community.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 
+import {MatButtonModule, MatStepperModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +23,13 @@ import { CreateEventComponent } from './create-event/create-event.component';
     EventDetailsComponent,
     CreateCommunityComponent,
     CreateEventComponent
-    StepperComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
