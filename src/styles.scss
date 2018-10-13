@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+$app-primary: #689f38;
+$app-accent: #ffc107;
+$app-warn: #ef5350;
+$app-primary-light: #8bc34a;
+$app-accent-light: #ffbd45;
+
+@mixin non-selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  text-align: center;
+  font-family: "Roboto", Avenir, sans-serif;
+  font-size: 12px;
+  height: 100%;
+  margin: 0;
+}
