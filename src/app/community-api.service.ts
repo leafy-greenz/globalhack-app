@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Community} from './lib/models/Community';
 import {User} from './lib/models/User';
+import {Event} from './lib/models/Event';
 
 const API_URL = 'http://localhost:3000';
 
@@ -57,9 +58,41 @@ export class CommunityAPIService {
     return this.http.put<User>(`${API_URL}/user/${id}`, user, { headers });
   }
 
-  getUser(id: string): Observable<User> {
+  getUserById(id: string): Observable<User> {
     return this.http.get<User>(`${API_URL}/user/${id}`);
   }
 
+  getEventById(id: string): Observable<Event> {
+    return this.http.get<Event>(`${API_URL}/event/${id}`);
+  }
 
+  createEvent(event: Event): Observable<Event> {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.post<Event>(`${API_URL}/event`, event, { headers });
+  }
+
+  updateEvent(id: string, event: Event): Observable<Event> {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.put<Event>(`${API_URL}/event/${id}`, event, { headers });
+  }
+
+  removeEvent(id: string): Observable<Event> {
+    return this.http.delete<Event>(`${API_URL}/event/${id}`);
+  }
+
+  addEventToCommunity(communityId: string, event: Event): void {
+    this.createEvent(event).subscribe((newEvent: Event) => {
+      this.http.put<Community>(`${API_URL}/community/${communityId}/event/${newEvent._id}`, null);
+    });
+  }
+
+  removeEventFromCommunity(communityId: string, event: Event): void {
+    this.createEvent(event).subscribe((newEvent: Event) => {
+      this.http.delete<Community>(`${API_URL}/community/${communityId}/event/${newEvent._id}`);
+    });
+  }
 }
