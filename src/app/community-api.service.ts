@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {Community} from './lib/models/Community';
 import {User} from './lib/models/User';
 import {Event} from './lib/models/Event';
+import {Tag} from './lib/models/Tag';
 
 const API_URL = 'http://localhost:3000';
 
@@ -94,5 +95,13 @@ export class CommunityAPIService {
     this.createEvent(event).subscribe((newEvent: Event) => {
       this.http.delete<Community>(`${API_URL}/community/${communityId}/event/${newEvent._id}`);
     });
+  }
+
+  getTags(): Observable<Tag[]> {
+    return this.http.get<Tag[]>(`${API_URL}/tag`);
+  }
+
+  getTagById(id: string): Observable<Tag> {
+    return this.http.get<Tag>(`${API_URL}/tag/${id}`);
   }
 }
