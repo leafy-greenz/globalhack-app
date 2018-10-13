@@ -4,6 +4,6 @@ import {User} from './User';
 export interface Question {
   _id?: string;
   text: string;
-  answers: Answer[];
-  createdBy: User;
+  answers?: Answer[];
+  createdBy?: User;
 }

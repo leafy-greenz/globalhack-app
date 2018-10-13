@@ -7,5 +7,5 @@ export interface User {
   username: string;
   password: string;
   role: string;
-  communities: Community[];
+  communities?: Community[];
 }

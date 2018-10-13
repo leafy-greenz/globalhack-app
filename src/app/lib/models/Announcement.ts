@@ -4,5 +4,5 @@ export interface Announcement {
   _id?: string;
   title: string;
   description: string;
-  createdBy: User;
+  createdBy?: User;
 }
