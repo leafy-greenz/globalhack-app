@@ -1,7 +1,7 @@
 import {User} from './User';
 
 export class Event {
-  _id: string;
+  _id?: string;
   name: string;
   date: Date;
   location: string;
