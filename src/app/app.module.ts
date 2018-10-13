@@ -15,6 +15,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatDividerModule,
+  MatFormFieldModule,
   MatInputModule,
   MatSidenavModule,
   MatStepperModule,
@@ -22,7 +23,6 @@ import {
 } from '@angular/material';
 import {CommunityAPIService} from './community-api.service';
 import {HttpClientModule} from '@angular/common/http';
-import {MatFormFieldModule} from '@angular/material/typings/esm5/form-field';
 
 @NgModule({
   declarations: [

@@ -6,7 +6,7 @@ export class Event {
   date: Date;
   location: string;
   description: string;
-  createdBy: User;
+  createdBy?: User;
 
   constructor(event: any) {
     this._id = event._id;

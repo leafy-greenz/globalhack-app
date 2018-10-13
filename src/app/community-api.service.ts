@@ -5,6 +5,8 @@ import {Community} from './lib/models/Community';
 import {User} from './lib/models/User';
 import {Event} from './lib/models/Event';
 import {Tag} from './lib/models/Tag';
+import {Question} from './lib/models/Question';
+import {Answer} from './lib/models/Answer';
 
 const API_URL = 'http://localhost:3000';
 
@@ -87,13 +89,15 @@ export class CommunityAPIService {
 
   addEventToCommunity(communityId: string, event: Event): void {
     this.createEvent(event).subscribe((newEvent: Event) => {
-      this.http.put<Community>(`${API_URL}/community/${communityId}/event/${newEvent._id}`, null);
+      this.http.put<Community>(`${API_URL}/community/${communityId}/event/${newEvent._id}`, null)
+        .subscribe();
     });
   }
 
   removeEventFromCommunity(communityId: string, event: Event): void {
     this.createEvent(event).subscribe((newEvent: Event) => {
-      this.http.delete<Community>(`${API_URL}/community/${communityId}/event/${newEvent._id}`);
+      this.http.delete<Community>(`${API_URL}/community/${communityId}/event/${newEvent._id}`)
+        .subscribe();
     });
   }
 
@@ -103,5 +107,41 @@ export class CommunityAPIService {
 
   getTagById(id: string): Observable<Tag> {
     return this.http.get<Tag>(`${API_URL}/tag/${id}`);
+  }
+
+  getQuestionById(id: string): Observable<Question> {
+    return this.http.get<Question>(`${API_URL}/question/${id}`);
+  }
+
+  createQuestion(question: Question): Observable<Question> {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.post<Question>(`${API_URL}/question`, question, { headers });
+  }
+
+  getAnswerById(id: string): Observable<Answer> {
+    return this.http.get<Answer>(`${API_URL}/answer/${id}`);
+  }
+
+  createAnswer(answer: Answer): Observable<Answer> {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.post<Answer>(`${API_URL}/answer`, answer, { headers });
+  }
+
+  addQuestionToCommunity(communityId: string, question: Question): void {
+    this.createQuestion(question).subscribe((newQuestion: Question) => {
+      this.http.put<Community>(`${API_URL}/community/${communityId}/question/${newQuestion._id}`, null)
+        .subscribe();
+    });
+  }
+
+  addAnswerToQuestion(questionId: string, answer: Answer): void {
+    this.createAnswer(answer).subscribe((newAnswer: Answer) => {
+      this.http.put<Community>(`${API_URL}/question/${questionId}/answer/${newAnswer._id}`, null)
+        .subscribe();
+    });
   }
 }
