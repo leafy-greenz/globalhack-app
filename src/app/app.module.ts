@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CommunityHubComponent } from './community-hub/community-hub.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
+
 import {AppRoutingModule} from './app-routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CreateCommunityComponent } from './create-community/create-community.component';
@@ -20,6 +21,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
     EventDetailsComponent,
     CreateCommunityComponent,
     CreateEventComponent
+    StepperComponent
   ],
   imports: [
     BrowserModule,
