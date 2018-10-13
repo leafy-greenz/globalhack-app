@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {CommunityHubComponent} from './community-hub/community-hub.component';
-import {EventDetailsComponent} from './event-details/event-details.component';
+import {EventDetailsComponent} from './community-hub/event-details/event-details.component';
 import {CreateEventComponent} from './create-event/create-event.component';
 import {CreateCommunityComponent} from './create-community/create-community.component';
 

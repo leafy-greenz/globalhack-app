@@ -19,6 +19,7 @@ nav {
 
   a {
     @include non-selectable;
+    background-color: $app-primary-dark;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,8 +34,6 @@ nav {
     }
   }
 
-
-
   .left-align {
     display: flex;
     flex-direction: row;
@@ -47,6 +46,7 @@ nav {
       align-items: center;
       margin-left: 20px;
       @include non-selectable;
+      background-color: $app-primary-dark;
 
       img {
         width: 42px;
