@@ -1,4 +1,6 @@
-@import "./theme";
+$app-primary: #689f38;
+$app-accent: #ffc107;
+$app-warn: #ef5350;
 
 @mixin non-selectable {
   -webkit-touch-callout: none;
@@ -6,30 +8,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-@mixin button-style($font-size: 16px, $background-color: $app-accent, $hover-background-color: $app-accent-light) {
-  text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: $font-size;
-  background-color: $background-color;
-  color: white;
-
-  &:hover {
-    background-color: $hover-background-color;
-    cursor: pointer;
-  }
-
-  &:disabled {
-    background-color: $disabled-gray !important;
-
-    &:hover {
-      background-color: $disabled-gray !important;
-      cursor: not-allowed;
-    }
-  }
-
 }
 
 html {
