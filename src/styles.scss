@@ -1,12 +1,8 @@
-
-@import "theme";
-
-$app-primary: #4caf50;
+$app-primary: #689f38;
 $app-accent: #ffc107;
 $app-warn: #ef5350;
-$app-primary-light: #95ce97;
+$app-primary-light: #8bc34a;
 $app-accent-light: #ffbd45;
-$app-primary-dark: #388e3c;
 
 @mixin non-selectable {
   -webkit-touch-callout: none;
@@ -26,5 +22,4 @@ body {
   font-size: 12px;
   height: 100%;
   margin: 0;
-  background-color: $app-primary;
 }
