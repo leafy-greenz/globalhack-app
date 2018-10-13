@@ -13,6 +13,8 @@ import { CreateCommunityComponent } from './create-community/create-community.co
 import { CreateEventComponent } from './create-event/create-event.component';
 import {MatCardModule, MatDividerModule, MatSidenavModule, MatTabsModule} from '@angular/material';
 
+import {MatButtonModule, MatStepperModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import {MatCardModule, MatDividerModule, MatSidenavModule, MatTabsModule} from '
     MatCardModule,
     MatSidenavModule,
     MatDividerModule,
-    MatTabsModule
+    MatTabsModule,
+    MatButtonModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
