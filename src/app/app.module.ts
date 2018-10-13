@@ -11,9 +11,18 @@ import {AppRoutingModule} from './app-routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CreateCommunityComponent} from './create-community/create-community.component';
 import {CreateEventComponent} from './create-event/create-event.component';
-import {MatCardModule, MatDividerModule, MatSidenavModule, MatTabsModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDividerModule,
+  MatInputModule,
+  MatSidenavModule,
+  MatStepperModule,
+  MatTabsModule
+} from '@angular/material';
 import {CommunityAPIService} from './community-api.service';
 import {HttpClientModule} from '@angular/common/http';
+import {MatFormFieldModule} from '@angular/material/typings/esm5/form-field';
 
 @NgModule({
   declarations: [
@@ -33,7 +42,11 @@ import {HttpClientModule} from '@angular/common/http';
     MatSidenavModule,
     MatDividerModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatStepperModule
   ],
   providers: [CommunityAPIService],
   bootstrap: [AppComponent]
