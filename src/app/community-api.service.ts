@@ -7,6 +7,7 @@ import {Event} from './lib/models/Event';
 import {Tag} from './lib/models/Tag';
 import {Question} from './lib/models/Question';
 import {Answer} from './lib/models/Answer';
+import {Announcement} from './lib/models/Announcement';
 
 const API_URL = 'http://localhost:3000';
 
@@ -141,6 +142,24 @@ export class CommunityAPIService {
   addAnswerToQuestion(questionId: string, answer: Answer): void {
     this.createAnswer(answer).subscribe((newAnswer: Answer) => {
       this.http.put<Community>(`${API_URL}/question/${questionId}/answer/${newAnswer._id}`, null)
+        .subscribe();
+    });
+  }
+
+  getAnnouncementById(id: string): Observable<Announcement> {
+    return this.http.get<Announcement>(`${API_URL}/announcement/${id}`);
+  }
+
+  createAnnouncement(announcement: Announcement): Observable<Announcement> {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.post<Announcement>(`${API_URL}/announcement`, announcement, { headers });
+  }
+
+  addAnnouncementToCommunity(communityId: string, announcement: Announcement): void {
+    this.createAnnouncement(announcement).subscribe((newAnnouncement: Announcement) => {
+      this.http.put<Community>(`${API_URL}/community/${communityId}/announcement/${newAnnouncement._id}`, null)
         .subscribe();
     });
   }
