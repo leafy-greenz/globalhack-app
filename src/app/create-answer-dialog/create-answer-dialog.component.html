@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Answer Question</h2>
+<mat-dialog-content>
+
+  <form [formGroup]="this.createAnswerForm">
+    <div class="flex-col-container">
+      <mat-form-field>
+        <textarea matInput
+                  placeholder="Answer"
+                  formControlName="text"></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button (click)="submitAnswer()">Submit</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

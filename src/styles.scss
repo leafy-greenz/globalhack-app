@@ -1,11 +1,12 @@
-@import "theme";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('https://fonts.googleapis.com/css?family=Anton|Lalezar|Oswald|Lato:300,900');
 
 @import url('https://fonts.googleapis.com/css?family=Lato:200,400');
 
 $app-primary: #4caf50;
 $app-accent: #ffc107;
 $app-warn: #ef5350;
-$app-primary-light: #8bc34a;
+$app-primary-light: #53bc56;
 $app-accent-light: #ffbd45;
 $app-primary-dark: #388e3c;
 
@@ -15,6 +16,7 @@ $app-primary-dark: #388e3c;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background-color: $app-primary;
 }
 
 html {

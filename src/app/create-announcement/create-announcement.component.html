@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Add Announcement</h2>
+<mat-dialog-content>
+
+  <form [formGroup]="this.createAnnouncementForm">
+    <div class="flex-col-container">
+      <mat-form-field>
+        <input matInput
+               placeholder="Title"
+               formControlName="title" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+               placeholder="Description"
+               formControlName="description"/>
+      </mat-form-field>
+
+    </div>
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button (click)="submitAnnouncement()">Submit</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

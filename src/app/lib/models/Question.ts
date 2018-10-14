@@ -6,4 +6,5 @@ export interface Question {
   text: string;
   answers?: Answer[];
   createdBy?: User;
+  dateCreated?: Date;
 }

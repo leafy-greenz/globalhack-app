@@ -2,14 +2,46 @@
   margin-top: 100px;
   color: white;
   width: 100%;
+  text-align: center;
 
   h1 {
-    font-size: 30px;
+    font-size: 34px;
   }
 
+}
+
+mat-icon {
+  margin-top: 14.93333px;
+  margin-bottom: 14.9333px;
+  margin-right: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
 }
 
 mat-card {
   margin: 30px 60px 30px 60px;
   text-align: left;
+  background-color: white;
+  color: #414141;
+}
+
+mat-tab-group {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+mat-form-field {
+  width: 600px;
+  font-size: 16px;
+}
+
+/deep/ .mat-tab-label-content {
+  color: white;
+}
+
+/deep/ .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: white !important;
 }

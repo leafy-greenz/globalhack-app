@@ -1,35 +1,68 @@
 <div class="page-container">
 
-  <h1>Hello, bikerboy55!</h1>
+  <h1>خوش آمدی</h1>
 
   <mat-tab-group>
 
     <mat-tab label="Feed">
-      <mat-card>
-        <h2>Event name</h2>
-        <p>Community Name</p>
-        <p>Date/time</p>
-        <p>Location</p>
-      </mat-card>
+      <div *ngIf="this.allFeed">
+        <mat-card *ngFor="let event of this.allFeed">
+          <div class="flex-container">
+            <mat-icon>{{ event.name ? 'calendar_today' : 'notification_important' }}</mat-icon>
+            <h2>{{ event.name || event.title }}</h2>
+          </div>
+          <p><b>Description: </b>{{ event.description }}</p>
+          <p *ngIf="event.date"><b>Date/Time: </b>{{ event.date }}</p>
+          <p *ngIf="event.location"><b>Location: </b>{{ event.location }}</p>
+        </mat-card>
+      </div>
     </mat-tab>
 
     <mat-tab label="Your Communities">
+      <div *ngIf="this.allCommunities">
+        <mat-card *ngFor="let community of this.allCommunities"
+                  (click)="this.goToCommunityFromCommunity(community)">
+          <h2>{{ community.name }}</h2>
+          <p>{{ community.description }}</p>
+          <p><b>Members: </b>{{ community.members.length }} </p>
+          <p>{{ community.tags }}</p>
+        </mat-card>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Explore">
+      <mat-form-field floatLabel="never">
+        <mat-chip-list #chipList>
+          <mat-chip *ngFor="let tag of tags"
+                    [selectable]="selectable"
+                    [removable]="removable"
+                    (removed)="remove(tag)">
+            {{ tag }}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input
+            matInput
+            placeholder="Search by tag..."
+            #tagInput
+            [formControl]="tagsCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
+            {{ tag }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
       <mat-card>
         <h2>Community name</h2>
         <p>Description of community</p>
         <p>Members: </p>
         <p>Topics</p>
       </mat-card>
-    </mat-tab>
-
-    <mat-tab label="Explore">
-      <mat-form-field>
-        <input matInput placeholder="Search...">
-        <h2>Community name</h2>
-        <p>Description of community</p>
-        <p>Members</p>
-        <p>Topics</p>
-      </mat-form-field>
     </mat-tab>
   </mat-tab-group>
 
