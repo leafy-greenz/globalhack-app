@@ -20,7 +20,8 @@
 
     <mat-tab label="Your Communities">
       <div *ngIf="this.allCommunities">
-        <mat-card *ngFor="let community of this.allCommunities">
+        <mat-card *ngFor="let community of this.allCommunities"
+                  (click)="this.goToCommunityFromCommunity(community)">
           <h2>{{ community.name }}</h2>
           <p>{{ community.description }}</p>
           <p><b>Members: </b>{{ community.members.length }} </p>
