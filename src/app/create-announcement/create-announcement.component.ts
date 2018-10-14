@@ -9,20 +9,18 @@ import {MatDialogRef} from '@angular/material';
 })
 export class CreateAnnouncementComponent {
 
-  createEventForm: FormGroup;
+  createAnnouncementForm: FormGroup;
 
   constructor(private dialogRef: MatDialogRef<CreateAnnouncementComponent>,
               private fb: FormBuilder) {
-    this.createEventForm = this.fb.group({
-      name: '',
+    this.createAnnouncementForm = this.fb.group({
+      title: '',
       description: '',
-      date: '',
-      location: ''
     });
   }
 
-  submitEvent(): void {
-    this.dialogRef.close(this.createEventForm.value);
+  submitAnnouncement(): void {
+    this.dialogRef.close(this.createAnnouncementForm.value);
   }
 
 }
