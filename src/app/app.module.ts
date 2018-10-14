@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CreateCommunityComponent} from './create-community/create-community.component';
 import {CreateEventComponent} from './create-event/create-event.component';
 import {
+  MatAutocompleteModule,
   MatButtonModule,
   MatCardModule,
   MatChipsModule,
@@ -24,12 +25,13 @@ import {
   MatSidenavModule,
   MatStepperModule,
   MatTabsModule,
-  MatAutocompleteModule,
 } from '@angular/material';
 import {CommunityAPIService} from './community-api.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CreateAnnouncementComponent} from './create-announcement/create-announcement.component';
+import {CreateQuestionDialogComponent} from './create-question-dialog/create-question-dialog.component';
+import {CreateAnswerDialogComponent} from './create-answer-dialog/create-answer-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {CreateAnnouncementComponent} from './create-announcement/create-announce
     CommunityHubComponent,
     CreateCommunityComponent,
     CreateEventComponent,
-    CreateAnnouncementComponent
+    CreateAnnouncementComponent,
+    CreateQuestionDialogComponent,
+    CreateAnswerDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +67,12 @@ import {CreateAnnouncementComponent} from './create-announcement/create-announce
     MatNativeDateModule,
     MatAutocompleteModule
   ],
-  entryComponents: [CreateEventComponent, CreateAnnouncementComponent],
+  entryComponents: [
+    CreateEventComponent,
+    CreateAnnouncementComponent,
+    CreateQuestionDialogComponent,
+    CreateAnswerDialogComponent
+  ],
   providers: [CommunityAPIService],
   bootstrap: [AppComponent]
 })

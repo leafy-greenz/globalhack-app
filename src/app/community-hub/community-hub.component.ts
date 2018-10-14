@@ -7,6 +7,10 @@ import {Announcement} from '../lib/models/Announcement';
 import {MatDialog} from '@angular/material';
 import {CreateEventComponent} from '../create-event/create-event.component';
 import {CreateAnnouncementComponent} from '../create-announcement/create-announcement.component';
+import {CreateQuestionDialogComponent} from '../create-question-dialog/create-question-dialog.component';
+import {Question} from '../lib/models/Question';
+import {CreateAnswerDialogComponent} from '../create-answer-dialog/create-answer-dialog.component';
+import {Answer} from '../lib/models/Answer';
 
 @Component({
   selector: 'app-community-hub',
@@ -88,6 +92,34 @@ export class CommunityHubComponent implements OnInit {
         this.community.announcements.sort((a: Announcement, b: Announcement) => {
           return +b.dateCreated < +a.dateCreated ? -1 : 1;
         });
+      }
+    });
+  }
+
+  addQuestion(): void {
+    const dialogRef = this.dialog.open(CreateQuestionDialogComponent);
+
+    dialogRef.afterClosed().subscribe((value: Question) => {
+      if (value) {
+        this.api.addQuestionToCommunity(this.communityId, value);
+
+        this.community.questions.push(value);
+        this.community.questions.sort((a: Question, b: Question) => {
+          return +a.dateCreated > +b.dateCreated ? -1 : 1;
+        });
+      }
+    });
+
+  }
+
+  addAnswer(questionId: string): void {
+    const dialogRef = this.dialog.open(CreateAnswerDialogComponent);
+
+    dialogRef.afterClosed().subscribe((value: Answer) => {
+      if (value) {
+        this.api.addAnswerToQuestion(questionId, value);
+
+        this.community.questions.find(q => q._id === questionId).answers.push(value);
       }
     });
   }
