@@ -5,6 +5,10 @@ mat-drawer-container {
   height: 100%;
 }
 
+.mat-drawer-container {
+  background: #4caf50;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -14,11 +18,6 @@ mat-drawer-container {
     margin-bottom: 16.6px;
     margin-right: 20px;
   }
-}
-
-mat-chip {
-  background-color: #e0e0e0;
-  color: rgba(0, 0, 0, .87);
 }
 
 mat-drawer-content {
@@ -38,7 +37,7 @@ mat-drawer-content {
 
   .list-container {
     text-align: left;
-
+    margin-bottom: 15em;
     h2 {
       font-size: 20px;
     }
@@ -48,7 +47,6 @@ mat-drawer-content {
     }
 
     mat-card {
-      background-color: white;
       margin-right: 40px;
       margin-top: 20px;
     }

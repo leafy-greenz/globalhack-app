@@ -3,15 +3,15 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {MatDialogRef} from '@angular/material';
 
 @Component({
-  selector: 'app-create-event',
-  templateUrl: './create-event.component.html',
-  styleUrls: ['./create-event.component.scss']
+  selector: 'app-create-announcement',
+  templateUrl: './create-announcement.component.html',
+  styleUrls: ['./create-announcement.component.scss']
 })
-export class CreateEventComponent {
+export class CreateAnnouncementComponent {
 
   createEventForm: FormGroup;
 
-  constructor(private dialogRef: MatDialogRef<CreateEventComponent>,
+  constructor(private dialogRef: MatDialogRef<CreateAnnouncementComponent>,
               private fb: FormBuilder) {
     this.createEventForm = this.fb.group({
       name: '',
@@ -24,4 +24,5 @@ export class CreateEventComponent {
   submitEvent(): void {
     this.dialogRef.close(this.createEventForm.value);
   }
+
 }

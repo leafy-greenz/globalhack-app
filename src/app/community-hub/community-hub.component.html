@@ -18,8 +18,10 @@
   <mat-drawer-content>
     <div class="header-container">
       <h1>{{ this.community.name }}</h1>
-      <p>Description: {{ this.community.description }}</p>
-      <p>Location: {{ this.community.location }}</p>
+      <p><b>Description:</b> {{ this.community.description }}</p>
+      <p><b>Location:</b> {{ this.community.location }}</p>
+      <button mat-raised-button (click)="this.addEvent()">Add Event</button>
+      <button style="margin-left: 20px" mat-raised-button (click)="this.addAnnouncement()">Add Announcement</button>
     </div>
     <div class="list-container">
       <mat-card *ngFor="let item of this.community.feed">
@@ -27,9 +29,9 @@
           <mat-icon>{{ item.name ? 'calendar_today' : 'notification_important' }}</mat-icon>
           <h2>{{ item.name || item.title }}</h2>
         </div>
-        <p>{{ item.description }}</p>
-        <p *ngIf="item.date">Date: {{ item.date }}</p>
-        <p *ngIf="item.location">Location: {{ item.location }}</p>
+        <p><b>Description:</b> {{ item.description }}</p>
+        <p *ngIf="item.date"><b>Date:</b> {{ item.date }}</p>
+        <p *ngIf="item.location"><b>Location:</b> {{ item.location }}</p>
       </mat-card>
     </div>
   </mat-drawer-content>
