@@ -16,3 +16,5 @@ As our computer science teacher always said, experience trumps skill. This is es
 
 ## What's next for leafy greens
 Because we are a set of 3 old high school friends, we really plan to keep working together to create awesome things that make the world a better place. Oh yeah, and have fun doing it.
+
+For our backend please visit: https://github.com/leafy-greenz/community-backend
