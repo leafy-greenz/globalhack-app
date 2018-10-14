@@ -1,49 +1,74 @@
 @import '../../styles';
 
+.page-container {
+    overflow:hidden;
+}
+
 .container {
-    background-image: url("/../assets/treebackground.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     margin-top: 55px;
     height: auto;
     width: 100%;
-    position: relative
+    position: relative;
+    
 }
 
-// .centered {
-//     position: absolute;
-//     top: 20%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     font-family: 'Lato', sans-serif;
-//     font-weight: 400;
-//     font-size: 100px;
-//     color: white;
-// }
-// .quotes {
-//     position: absolute;
-//     top: 40%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     font-family: 'Lato', sans-serif;
-//     font-weight: 200;
-//     font-size: 30px;
-//     color: white;
-// }
+.title {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 100px;
+    color: white;
+    margin-bottom: 40px;
+}
+.one {
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lato', sans-serif;
+    font-weight: 200;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: white;
+}
+.two {
+    position: absolute;
+    top: 44%;
+    left: 23%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lato', sans-serif;
+    font-weight: 200;
+    font-size: 40px;
+    color: white;
+}
+.three {
+    position: absolute;
+    top: 52%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lato', sans-serif;
+    font-weight: 200;
+    font-size: 40px;
+    color: white;
+}
+.mat-raised-button {
+    padding: 10px 40px 10px 40px;
+    font-size: 20px;
+}
+.button{
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    transform: translate(-50%, -50%);
 
-// .button{
-//     position: absolute;
-//     top: 80%;
-//     left: 50%;
+}
 
-//     transform: translate(-50%, -50%);
-
-// }
-
-// img{
-//     max-width: 100%;
-//     height: auto;
-//     position: relative;
-//     right: 55px;
-// }
-
+img{
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    left: 400px;
+}
