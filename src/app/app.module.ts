@@ -14,10 +14,13 @@ import {
   MatButtonModule,
   MatCardModule,
   MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
   MatDividerModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
+  MatNativeDateModule,
   MatSidenavModule,
   MatStepperModule,
   MatTabsModule,
@@ -25,7 +28,8 @@ import {
 } from '@angular/material';
 import {CommunityAPIService} from './community-api.service';
 import {HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CreateAnnouncementComponent} from './create-announcement/create-announcement.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     HomeComponent,
     CommunityHubComponent,
     CreateCommunityComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    CreateAnnouncementComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +56,14 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatStepperModule,
     MatChipsModule,
     MatIconModule,
-    MatAutocompleteModule,
-    ReactiveFormsModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule
   ],
+  entryComponents: [CreateEventComponent, CreateAnnouncementComponent],
   providers: [CommunityAPIService],
   bootstrap: [AppComponent]
 })
