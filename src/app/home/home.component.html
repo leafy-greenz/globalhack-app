@@ -5,11 +5,15 @@
   <mat-tab-group>
 
     <mat-tab label="Feed">
-      <div *ngIf="this.allEvents">
-        <mat-card *ngFor="let event of this.allEvents">
-          <h2>{{ event.name }}</h2>
-          <p><b>Date/Time: </b>{{ event.date }}</p>
-          <p><b>Location: </b>{{ event.location }}</p>
+      <div *ngIf="this.allFeed">
+        <mat-card *ngFor="let event of this.allFeed">
+          <div class="flex-container">
+            <mat-icon>{{ event.name ? 'calendar_today' : 'notification_important' }}</mat-icon>
+            <h2>{{ event.name || event.title }}</h2>
+          </div>
+          <p><b>Description: </b>{{ event.description }}</p>
+          <p *ngIf="event.date"><b>Date/Time: </b>{{ event.date }}</p>
+          <p *ngIf="event.location"><b>Location: </b>{{ event.location }}</p>
         </mat-card>
       </div>
     </mat-tab>
