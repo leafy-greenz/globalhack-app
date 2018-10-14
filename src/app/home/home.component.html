@@ -5,25 +5,24 @@
   <mat-tab-group>
 
     <mat-tab label="Feed">
-      <mat-card>
-        <h2>Event name</h2>
-        <p>Community Name</p>
-        <p>Date/time</p>
-        <p>Location</p>
+      <mat-card *ngFor="let event of this.allEvents">
+        <h2>{{ event.name }}</h2>
+        <p><b>Date/Time: </b>{{ event.date }}</p>
+        <p><b>Location: </b>{{ event.location }}</p>
       </mat-card>
     </mat-tab>
 
     <mat-tab label="Your Communities">
-      <mat-card>
-        <h2>Community name</h2>
-        <p>Description of community</p>
-        <p>Members: </p>
-        <p>Topics</p>
+      <mat-card *ngFor="let community of this.allCommunities">
+        <h2>{{ community.name }}</h2>
+        <p>{{ community.description }}</p>
+        <p><b>Members: </b>{{ community.members.length }} </p>
+        <p>{{ community.tags }}</p>
       </mat-card>
     </mat-tab>
 
     <mat-tab label="Explore">
-      <mat-form-field>
+      <mat-form-field floatLabel="never">
         <input matInput placeholder="Search...">
       </mat-form-field>
       <mat-card>

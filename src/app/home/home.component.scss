@@ -13,9 +13,15 @@
 mat-card {
   margin: 30px 60px 30px 60px;
   text-align: left;
+  background-color: white;
+  color: #414141;
 }
 
 mat-tab-group {
   margin-left: 40px;
   margin-right: 40px;
+}
+
+mat-form-field {
+  font-size: 20px;
 }
