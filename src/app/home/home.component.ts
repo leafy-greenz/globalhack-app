@@ -17,7 +17,7 @@ import {MatAutocompleteSelectedEvent, MatChipInputEvent} from '@angular/material
 export class HomeComponent implements OnInit {
 
   allCommunities: Community[];
-  allEvents: Event[];
+  allFeed: any[];
   visible = true;
   selectable = true;
   removable = true;
@@ -43,10 +43,8 @@ export class HomeComponent implements OnInit {
     this.communityService.getAllCommunities().subscribe(communities => {
       this.allCommunities = communities;
       communities.forEach(community => {
-        this.allEvents = [...this.allEvents, ...community.events];
+        this.allFeed = [...(this.allFeed || []), ...community.events, ...community.announcements];
       });
-      console.log(this.allCommunities);
-      console.log(this.allEvents);
     });
   }
 
@@ -86,7 +84,16 @@ export class HomeComponent implements OnInit {
   }
 
   goToCommunityFromEvent(event: Event): void {
-    this.router.navigateByUrl('/community/' + event._id);
+    let id;
+    for (let i = 0; i < this.allCommunities.length; i++) {
+      if (this.allCommunities[i].events.find(e => e._id === event._id)) {
+        id = this.allCommunities[i]._id;
+      }
+    }
+
+    if (id) {
+      this.router.navigateByUrl('/community/' + id);
+    }
   }
 
 }

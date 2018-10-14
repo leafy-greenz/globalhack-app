@@ -54,23 +54,42 @@ export class CommunityHubComponent implements OnInit {
     const dialogRef = this.dialog.open(CreateEventComponent);
 
     dialogRef.afterClosed().subscribe((value: Event) => {
-      value.date = new Date(value.date);
-      this.api.addEventToCommunity(this.communityId, value);
-      this.community.events.push(value);
-      this.community.feed.push(value);
+      if (value) {
+        value.date = new Date(value.date);
+        this.api.addEventToCommunity(this.communityId, value);
+        this.community.events.push(value);
+        this.community.feed.push(value);
 
-      this.community.feed.sort((a: Event, b: Event) => {
-        return +b.dateCreated < +a.dateCreated ? -1 : 1;
-      });
+        this.community.feed.sort((a: Event, b: Event) => {
+          return +b.dateCreated < +a.dateCreated ? -1 : 1;
+        });
 
-      this.community.events.sort((a: Event, b: Event) => {
-        return +b.dateCreated < +a.dateCreated ? -1 : 1;
-      });
+        this.community.events.sort((a: Event, b: Event) => {
+          return +b.dateCreated < +a.dateCreated ? -1 : 1;
+        });
+      }
     });
   }
 
   addAnnouncement(): void {
     const dialogRef = this.dialog.open(CreateAnnouncementComponent);
+
+    dialogRef.afterClosed().subscribe((value: Announcement) => {
+      if (value) {
+        this.api.addAnnouncementToCommunity(this.communityId, value);
+
+        this.community.announcements.push(value);
+        this.community.feed.push(value);
+
+        this.community.feed.sort((a: Event, b: Event) => {
+          return +b.dateCreated < +a.dateCreated ? -1 : 1;
+        });
+
+        this.community.announcements.sort((a: Announcement, b: Announcement) => {
+          return +b.dateCreated < +a.dateCreated ? -1 : 1;
+        });
+      }
+    });
   }
 
 }
