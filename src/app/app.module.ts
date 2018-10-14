@@ -15,10 +15,8 @@ import {
   MatButtonModule,
   MatCardModule,
   MatDividerModule,
-  MatFormFieldModule,
   MatInputModule,
   MatSidenavModule,
-  MatStepperModule,
   MatTabsModule,
   MatFormFieldModule
 } from '@angular/material';
@@ -46,8 +44,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule,
-    MatStepperModule
+    MatButtonModule
   ],
   providers: [CommunityAPIService],
   bootstrap: [AppComponent]
