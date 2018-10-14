@@ -1,7 +1,4 @@
-<header>
-Things to Do
-</header>
-
+# Coalece - Many leaves. One Tree. Rooted in their common culture. Experienced immigrants mentoring a new generation.
 Team Leafy Greens is a group of old high school friends coming together to create a beautiful, influential application to better the world.
 
 ## Inspiration
