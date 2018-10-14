@@ -1,27 +1,18 @@
-# MeanApp
+Team Leafy Greens is a group of old high school friends coming together to create a beautiful, influential application to better the world.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+#Inspiration
+Project manager of Leafy Greens, Yasaman Mostafavi, has seen the difficulties that foreign born individuals face every day to get help and communicate with one another. Her family is a member of the Iranian Society in St.Louis, where they help others get cars, start businesses, buy houses, and even find the perfect place to buy a good eggplant.
 
-## Development server
+#What it does
+Coalesce is built to be a safe, translatable, and accessible website for foreign born individuals to join communities of similar people. Coalesce plans to bring together everyone together to make a better transition experience for new Americans and connect them with experienced ones.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#How we built it
+Team Leafy Green used Angular, Node, and Express, among other things to really get the ball rolling. Thanks to our experience in web development from past projects, we could buckle down experiment with concepts we never had before.
+#Challenges we ran into
+Our one true downfall had to be theming our app. We bumped past countless errors as we frantically combed through the code.
 
-## Code scaffolding
+#What we learned
+As our computer science teacher always said, experience trumps skill. This is especially true in development. We are proud to say we accomplished so much more than we could have a year, 6 months, or even 6 weeks ago in no more than 24 hours.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#What's next for leafy greens
+Because we are a set of 3 old high school friends, we really plan to keep working together to create awesome things that make the world a better place. Oh yeah, and have fun doing it.
