@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   tagsCtrl = new FormControl();
   filteredTags: Observable<string[]>;
   tags: string[] = [];
-  allTags: string[] = ['Culture', 'Education', 'Employment'];
+  allTags: string[] = ['Culture', 'Education', 'Employment', 'Language', 'Healthcare', 'Housing'];
 
   @ViewChild('tagsInput') tagsInput: ElementRef<HTMLInputElement>;
 
