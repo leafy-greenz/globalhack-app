@@ -163,4 +163,12 @@ export class CommunityAPIService {
         .subscribe();
     });
   }
+
+  addCommunityToUser(userId: string, communityId: string): void {
+    this.http.put<User>(`${API_URL}/user/${userId}/community/${communityId}`, null)
+      .subscribe();
+
+    this.http.put<Community>(`${API_URL}/community/${communityId}/user/${userId}`, null)
+      .subscribe();
+  }
 }

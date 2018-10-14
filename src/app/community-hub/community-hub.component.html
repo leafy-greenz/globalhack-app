@@ -1,22 +1,35 @@
-<mat-drawer-container>
+<mat-drawer-container *ngIf="this.community">
   <mat-drawer mode="side" position="end" [opened]="true">
     <h3>Mentors</h3>
     <mat-divider></mat-divider>
+    <mat-chip-list>
+      <mat-chip *ngFor="let user of this.community.members.filter(this.mentorFilter)">
+        {{ user.first_name + " " + user.last_name }}
+      </mat-chip>
+    </mat-chip-list>
     <h3>Members</h3>
     <mat-divider></mat-divider>
+    <mat-chip-list>
+      <mat-chip *ngFor="let user of this.community.members.filter(this.userFilter)">
+        {{ user.first_name + " " + user.last_name }}
+      </mat-chip>
+    </mat-chip-list>
   </mat-drawer>
   <mat-drawer-content>
     <div class="header-container">
-      <h1>Community Title</h1>
-      <p>Community description</p>
-      <p>City: St. Louis, MO</p>
+      <h1>{{ this.community.name }}</h1>
+      <p>Description: {{ this.community.description }}</p>
+      <p>Location: {{ this.community.location }}</p>
     </div>
     <div class="list-container">
-      <mat-card>
-        <h2>Event Title</h2>
-        <p>event description...</p>
-        <p>Date:</p>
-        <p>Location:</p>
+      <mat-card *ngFor="let item of this.community.feed">
+        <div class="flex-container">
+          <mat-icon>{{ item.name ? 'calendar_today' : 'notification_important' }}</mat-icon>
+          <h2>{{ item.name || item.title }}</h2>
+        </div>
+        <p>{{ item.description }}</p>
+        <p *ngIf="item.date">Date: {{ item.date }}</p>
+        <p *ngIf="item.location">Location: {{ item.location }}</p>
       </mat-card>
     </div>
   </mat-drawer-content>

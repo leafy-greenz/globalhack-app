@@ -6,8 +6,10 @@ import {Tag} from './Tag';
 
 export interface Community {
   _id?: string;
+  feed?: any[];
   name: string;
   description: string;
+  location: string;
   members: User[];
   events: Event[];
   announcements: Announcement[];

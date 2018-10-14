@@ -13,8 +13,10 @@ import {CreateEventComponent} from './create-event/create-event.component';
 import {
   MatButtonModule,
   MatCardModule,
+  MatChipsModule,
   MatDividerModule,
   MatFormFieldModule,
+  MatIconModule,
   MatInputModule,
   MatSidenavModule,
   MatStepperModule,
@@ -44,7 +46,9 @@ import {HttpClientModule} from '@angular/common/http';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatStepperModule
+    MatStepperModule,
+    MatChipsModule,
+    MatIconModule,
   ],
   providers: [CommunityAPIService],
   bootstrap: [AppComponent]
