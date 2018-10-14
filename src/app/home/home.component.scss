@@ -23,5 +23,14 @@ mat-tab-group {
 }
 
 mat-form-field {
-  font-size: 20px;
+  width: 600px;
+  font-size: 16px;
+}
+
+/deep/ .mat-tab-label-content {
+  color: white;
+}
+
+/deep/ .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: white !important;
 }

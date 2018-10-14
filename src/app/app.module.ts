@@ -20,10 +20,12 @@ import {
   MatInputModule,
   MatSidenavModule,
   MatStepperModule,
-  MatTabsModule
+  MatTabsModule,
+  MatAutocompleteModule,
 } from '@angular/material';
 import {CommunityAPIService} from './community-api.service';
 import {HttpClientModule} from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import {HttpClientModule} from '@angular/common/http';
     MatStepperModule,
     MatChipsModule,
     MatIconModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
   providers: [CommunityAPIService],
   bootstrap: [AppComponent]
