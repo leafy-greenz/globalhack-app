@@ -5,7 +5,6 @@ import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {CommunityHubComponent} from './community-hub/community-hub.component';
-import {EventDetailsComponent} from './community-hub/event-details/event-details.component';
 
 import {AppRoutingModule} from './app-routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -14,8 +13,10 @@ import {CreateEventComponent} from './create-event/create-event.component';
 import {
   MatButtonModule,
   MatCardModule,
+  MatChipsModule,
   MatDividerModule,
   MatFormFieldModule,
+  MatIconModule,
   MatInputModule,
   MatSidenavModule,
   MatStepperModule,
@@ -30,7 +31,6 @@ import {HttpClientModule} from '@angular/common/http';
     LoginComponent,
     HomeComponent,
     CommunityHubComponent,
-    EventDetailsComponent,
     CreateCommunityComponent,
     CreateEventComponent
   ],
@@ -46,7 +46,9 @@ import {HttpClientModule} from '@angular/common/http';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatStepperModule
+    MatStepperModule,
+    MatChipsModule,
+    MatIconModule,
   ],
   providers: [CommunityAPIService],
   bootstrap: [AppComponent]
